@@ -1,0 +1,72 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  color: #cad3f5;
+}
+
+window#waybar {
+  background-color: rgba(30, 30, 46, 0.95); /* Mocha base */
+  border-radius: 12px;
+  padding: 4px 10px;
+}
+
+#battery,
+#network,
+#clock,
+#custom-applauncher,
+#tray,
+#workspaces,
+#pulseaudio,
+#cpu,
+#memory,
+#temperature {
+  background-color: #1e1e2e;
+  margin: 6px 4px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: #b4befe;
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature {
+  font-weight: bold;
+  color: #89b4fa;
+}
+
+#pulseaudio:hover,
+#custom-applauncher:hover,
+#cpu:hover,
+#memory:hover {
+  background-color: #89b4fa;
+  color: #1e1e2e;
+  transition: 0.2s;
+}
+
+#workspaces button {
+  all: initial;
+  color: #cdd6f4;
+  padding: 4px 6px;
+  margin: 2px;
+  font-weight: bold;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+  color: #89b4fa;
+}
+
+#workspaces button.urgent {
+  color: #f38ba8;
+}
+
+#tray menu {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+

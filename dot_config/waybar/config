@@ -1,0 +1,76 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["custom/applauncher", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["cpu", "memory", "temperature", "pulseaudio", "battery", "network", "tray"],
+
+  "custom/applauncher": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wofi --show drun",
+    "on-click-right": "wofi --show run",
+    "on-click-middle": "hyprctl dispatch exit",
+    "exec-if": "command -v wofi",
+    "interval": 0
+  },
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "hyprctl dispatch workspace {name}"
+  },
+
+  "clock": {
+    "format": "{:%H:%M | %A %d %B}",
+    "tooltip": true,
+    "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt>{:%H:%M:%S}</tt>",
+    "interval": 60
+  },
+
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "tooltip": true,
+    "interval": 2
+  },
+
+  "memory": {
+    "format": " {used:0.1f}G",
+    "tooltip": true,
+    "interval": 5
+  },
+
+  "temperature": {
+    "hwmon-path": "/sys/class/thermal/thermal_zone0/temp",
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C",
+    "tooltip": false,
+    "interval": 10
+  },
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": " Muted",
+    "scroll-step": 5
+  },
+
+  "battery": {
+    "format": "{capacity}% ",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-critical": "{capacity}% ",
+    "interval": 30
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "  Ethernet",
+    "format-disconnected": "  Offline",
+    "tooltip": true
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  }
+}
+
