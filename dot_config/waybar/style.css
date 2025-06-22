@@ -1,15 +1,16 @@
+/* Catppuccin Mocha Green Theme for Waybar */
 * {
   font-family: "Iosevka Nerd", "JetBrains Mono Nerd", "Noto Sans Symbols", monospace;
-  border-radius: 8;
+  border-radius: 8px;
   font-size: 14px;
-  padding: 0px;
+  padding: 0;
   background: transparent;
 }
 
 window#waybar {
-  background-image: linear-gradient(to bottom, #141216 100%);
+  background-image: linear-gradient(to bottom, #1E2027 100%); /* Dark Mocha gray */
   border-radius: 8px;
-  padding: 0px;
+  padding: 0;
   border-style: none;
 }
 
@@ -18,12 +19,12 @@ window#waybar {
 #custom-applauncher,
 #tray,
 #workspaces {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background-image: linear-gradient(to bottom, #32344A 100%); /* Mocha surface0 */
   margin: 6px;
-  margin-right: 0px;
+  margin-right: 0;
   padding: 4px 8px;
   border-radius: 8px;
-  color: #FFFFFF;
+  color: #CAD3F5; /* Light text */
   border-style: none;
   transition-duration: 120ms;
 }
@@ -37,27 +38,27 @@ window#waybar {
   transition-duration: 120ms;
 }
 #custom-applauncher:hover {
-  background-image: linear-gradient(to bottom, #ac82e9 100%);
-  color: #141216;
+  background-image: linear-gradient(to bottom, #8BD5CA 100%); /* Mocha green */
+  color: #1E2027;
   transition-duration: 120ms;
 }
 
 #tray menu {
-  background-color: #141216;
-  color: #d8cab8;
+  background-color: #1E2027;
+  color: #C6D0F5;
   padding: 4px;
 }
 #tray menu menuitem {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background-image: linear-gradient(to bottom, #32344A 100%);
   margin: 3px;
-  color: #d8cab8;
+  color: #C6D0F5;
   border-radius: 4px;
   border-style: solid;
-  border-color: #27232b;
+  border-color: #32344A;
 }
 #tray menu menuitem:hover {
-  background-image: linear-gradient(to bottom, #27232b 100%);
-  color: #ac82e9;
+  background-image: linear-gradient(to bottom, #32344A 100%);
+  color: #8BD5CA;
   font-weight: bold;
 }
 
@@ -66,35 +67,31 @@ window#waybar {
   all: initial;
   min-width: 0;
   font-weight: bold;
-  color: #d8cab8;
-  margin-right: 0.2cm;
-  margin-left: 0.2cm;
+  color: #C6D0F5;
+  margin: 0 0.2cm;
 }
 
 #workspaces button:hover {
   transition-duration: 120ms;
-  color: #8f56e1;
+  color: #8BD5CA;
 }
-#workspaces button.focused {
-  color: #ac82e9;
-  font-weight: bold;
-}
+#workspaces button.focused,
 #workspaces button.active {
-  color: #ac82e9;
+  color: #A6E3A1; /* Mocha light green */
   font-weight: bold;
 }
 #workspaces button.urgent {
-  color: #fcb167;
+  color: #F5E0DC; /* Accent red for urgent */
 }
 
 #battery {
-  background-image: linear-gradient(to bottom, #27232b 100%);
-  color: #d8cab8;
+  background-image: linear-gradient(to bottom, #32344A 100%);
+  color: #C6D0F5;
 }
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-  background-color: #fc4649;
-  color: #1d2021;
+  background-color: #F5E0DC;
+  color: #1E2027;
 }
 
