@@ -1,76 +1,65 @@
 {
-  "layer": "top",
+  "layer": "bot",
+  "spacing": 0,
+  "height": 30,
+  "margin-bottom": 0,
+  "margin-top": 5,
   "position": "top",
-  "modules-left": ["custom/applauncher", "hyprland/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["cpu", "memory", "temperature", "pulseaudio", "battery", "network", "tray"],
+  "margin-right": 500,
+  "margin-left": 500,
 
-  "custom/applauncher": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "wofi --show drun",
-    "on-click-right": "wofi --show run",
-    "on-click-middle": "hyprctl dispatch exit",
-    "exec-if": "command -v wofi",
-    "interval": 0
-  },
+  "modules-left": [
+    "hyprland/workspaces",
+  ],
+  "modules-center": [
+    "custom/applauncher"
+  ],
+  "modules-right": [
+    "battery",
+    "tray",
+    "clock"
+  ],
 
   "hyprland/workspaces": {
-    "format": "{name}",
-    "on-click": "hyprctl dispatch workspace {name}"
-  },
-
-  "clock": {
-    "format": "{:%H:%M | %A %d %B}",
-    "tooltip": true,
-    "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt>{:%H:%M:%S}</tt>",
-    "interval": 60
-  },
-
-  "cpu": {
-    "format": "󰍛 {usage}%",
-    "tooltip": true,
-    "interval": 2
-  },
-
-  "memory": {
-    "format": " {used:0.1f}G",
-    "tooltip": true,
-    "interval": 5
-  },
-
-  "temperature": {
-    "hwmon-path": "/sys/class/thermal/thermal_zone0/temp",
-    "critical-threshold": 80,
-    "format": " {temperatureC}°C",
+    "disable-scroll": true,
+    "all-outputs": false,
     "tooltip": false,
-    "interval": 10
+    "show-empty": false
   },
 
-  "pulseaudio": {
-    "format": " {volume}%",
-    "format-muted": " Muted",
-    "scroll-step": 5
-  },
-
-  "battery": {
-    "format": "{capacity}% ",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "format-critical": "{capacity}% ",
-    "interval": 30
-  },
-
-  "network": {
-    "format-wifi": "  {essid}",
-    "format-ethernet": "  Ethernet",
-    "format-disconnected": "  Offline",
-    "tooltip": true
+  "custom/applauncher": {
+    "format": " ",
+    "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15",
+    "tooltip": false
   },
 
   "tray": {
-    "icon-size": 18,
-    "spacing": 10
+    "spacing": 10,
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": "  {:%H:%M}",
+    "tooltip": false
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{icon}  {time}",
+    "format-full": "  {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   }
 }
 
